@@ -67,7 +67,7 @@ $(document).ready(function () {
         });
 
         var getJSON = function(org, site, env, page) {
-            fetch('http://localhost:3000/api/pagebuilderJSON?org=' + org + '&site=' + site + '&env=' + env + '&page=' + page)
+            fetch('/api/pagebuilderJSON?org=' + org + '&site=' + site + '&env=' + env + '&page=' + page)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('Network response was not ok');
