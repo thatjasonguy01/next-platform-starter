@@ -11,10 +11,14 @@
     "dependencies": {
         "@netlify/blobs": "^8.1.1",
         "blobshape": "^1.0.0",
+        "bootstrap": "^5.3.3",
         "bright": "^0.8.5",
+        "handlebars": "^4.7.8",
+        "jquery": "^3.7.1",
         "markdown-to-jsx": "^7.4.5",
-        "next": "15.1.6",
+        "next": "^15.1.6",
         "react": "18.3.1",
+        "react-bootstrap": "^2.10.9",
         "react-dom": "18.3.1",
         "unique-names-generator": "^4.7.1"
     },

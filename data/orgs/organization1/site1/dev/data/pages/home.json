@@ -1,0 +1,24 @@
+{
+    "template":
+        "<html><head>{{>head head}}</head><body>{{>block header}}[[headerModules]]{{>endblock header}}{{>block main}}[[mainModules]]{{>endblock main}}{{>block footer}}[[footerModules]]{{>endblock footer}}</body></html>",
+    "head": [
+        {"type":"meta", "charset": "UTF-8"},
+        {"type": "meta", "name": "keywords", "content": "HTML, CSS, JavaScript"},
+        {"type": "meta", "name": "description", "content": "Free Web tutorials"},
+        {"type": "meta", "http-equiv": "refresh", "content": "30"},
+        {"type": "link", "rel": "stylesheet", "href": "/sites/site1/css/site.css"},
+        {"type": "meta", "name": "viewport", "href": "width=device-width, initial-scale=1.0"}
+    ],
+    "header": {
+        "type": "header",
+        "modules": ["global_ribbon"]
+    },
+    "main": {
+        "type": "main",
+        "modules": ["module123"]
+    },
+    "footer": {
+        "type": "footer",
+        "modules": []
+        }
+    }

@@ -34,3 +34,106 @@ a {
 .btn:disabled {
     @apply text-neutral-400 bg-neutral-700;
 }
+
+.hide{
+    display: none;
+}
+
+
+#pageBuilder{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgb(17, 28, 45);
+    color: rgb(234, 239, 244);
+    box-shadow: rgb(145 158 171 / 30%) 0px 0px 2px 0px, rgb(145 158 171 / 2%) 0px 12px 24px -4px;;
+    
+
+}
+
+#navMain{
+    height: 45px;
+    width: 100%;
+    display: block;
+    order: 5;
+}
+
+#pnlPreview, #pnlEdit{
+    width:100%;
+}
+
+.panel{
+    box-shadow: rgb(145 158 171 / 30%) 0px 0px 2px 0px, rgb(145 158 171 / 2%) 0px 12px 24px -4px;;
+}
+
+#pnlEdit{
+    display: none;
+}
+
+#pnlComponents{
+    order: 1;
+    height: 40%;
+    width: 100%;
+    display: none;
+}
+
+#pnlStyles{
+    order: 1;
+    height: 40%;
+    width: 100%;
+    display: none;
+}
+#pnlWrapper{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#canvasWrapper{
+    width: 100%;
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    background-color: #3c3c3c;
+    padding: .5rem;
+    flex-direction: column;
+}
+
+#canvas{
+    width: 375px;
+    flex-grow: 1;
+
+}
+
+@media (width >= 48rem) {
+    #pageBuilder{
+        flex-direction: column;
+    }
+
+    #navMain{
+        order: 0;
+
+    }
+
+    #pnlWrapper{
+        flex-direction: row;
+        width: 100%;
+    }
+
+    #pnlComponents{
+        height: 100%;
+        width: 200px;
+        display: flex;
+        order: 0;
+    }
+    
+    #pnlStyles{
+        order: 1;
+        height: 100%;
+        width: 200px;
+        display: flex;
+    }
+    
+        
+}

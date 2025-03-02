@@ -1,0 +1,15 @@
+{
+    "template":
+        "{{>block module}}{{>block block1}}{{>link link1}}{{>endblock}}{{>endblock}}",
+    "module": {
+        "class": "module"
+    },
+    "block1": {
+        "class": "ribbon"
+    },
+    "link1": {
+        "text": "Semi-Annual Sale - 25% OFF!",
+        "href": "/sale",
+        "class": ""
+    }
+}

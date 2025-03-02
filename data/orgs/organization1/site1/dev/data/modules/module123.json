@@ -1,0 +1,62 @@
+{
+    "template":
+        "{{>block module}}{{>block container1}}{{>block row1}}{{>block column1}}{{>text title1}}{{>text title2}}{{>text title3}}{{>text title4}}{{>text title5}}{{>img img1}}<br><br>{{>link link1}}{{>endblock}}{{>endblock}}{{>endblock}}{{>endblock}}",
+    "module": {
+        "data-type": "module",
+        "class": "module"
+    },
+    "container1": {
+        "data-type": "container",
+        "class": "container"
+    },
+    "row1": {
+        "data-type": "row",
+        "class": "row"
+    },
+    "column1": {
+        "data-type": "column",
+        "class": "col-3"
+    },
+    "link1": {
+        "data-type": "link",
+        "text": "Google",
+        "href": "https://www.google.com",
+        "class": "btn btn-primary",
+        "target": "_blank"
+    },
+    "title1": {
+        "data-type": "title",
+        "text": "Page Title",
+        "type": "h1",
+        "class": ""
+    },
+    "title2": {
+        "data-type": "title",
+        "text": "Section Title",
+        "type": "h2",
+        "class": ""
+    },
+    "title3": {
+        "data-type": "title",
+        "text": "Group Title",
+        "type": "h3",
+        "class": ""
+    },
+    "title4": {
+        "data-type": "title",
+        "text": "This is a paragraph",
+        "type": "p",
+        "class": ""
+    },
+    "title5": {
+        "data-type": "title",
+        "text": "This is a paragraph",
+        "type": "span",
+        "class": ""
+    }, 
+    "img1": {
+        "data-type": "image",
+        "src": "/sites/site1/assets/palmtrees.jpg",
+        "style": "width: 100px; display: block;"
+    }
+}
