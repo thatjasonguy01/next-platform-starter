@@ -1,0 +1,13 @@
+{
+    "Name": "My Test Site",
+    "Description": "",
+    "Keywords": "",
+    "Copyright": "My Company 2024",
+    "HTTPAlias": "https://www.example.com",
+    "Favicon": "",
+    "PageHeaderTags": [
+        {"type":"meta", "charset": "UTF-8"},
+        {"type": "meta", "name": "viewport", "href": "width=device-width, initial-scale=1.0"},
+        {"type": "meta", "rel": "canonical", "href": "https://www.example.com"}
+    ]
+}

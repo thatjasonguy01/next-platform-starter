@@ -13,7 +13,7 @@ async function checkFileExists(filePath) {
 export default function handler(req, res) {
     if (req.method === 'GET') {
        
-    const filePath = path.join(process.cwd() + '/public', '/scripts/', req.query.name);
+    const filePath = path.join(process.cwd() + '/public', '/scripts/', 'components.json');
     
     if (checkFileExists(filePath)) {
         const config = JSON.parse( fs.readFileSync(filePath, 'utf-8'));

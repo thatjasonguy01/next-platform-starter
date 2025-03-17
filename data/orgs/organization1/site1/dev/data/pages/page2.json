@@ -1,6 +1,6 @@
 {
     "template":
-        "<html><head>{{>head head}}</head><body>{{>block header}}[[headerModules]]{{>endblock header}}{{>block main}}[[mainModules]]{{>endblock main}}{{>block footer}}[[footerModules]]{{>endblock footer}}</body></html>",
+        "<html><head>{{>head head}}</head><body>{{>block header}}{{#each header.modules}}{{#dynamic this}}{{/dynamic}}{{/each}}{{>endblock header}}{{>block main}}{{#each main.modules}}{{#dynamic this}}{{/dynamic}}{{/each}}{{>endblock main}}{{>block footer}}{{#each footer.modules}}{{#dynamic this}}{{/dynamic}}{{/each}}{{>endblock footer}}</body></html>",
     "head": [
         {"type":"meta", "charset": "UTF-8"},
         {"type": "meta", "name": "keywords", "content": "HTML, CSS, JavaScript"},
@@ -11,11 +11,11 @@
     ],
     "header": {
         "type": "header",
-        "modules": []
+        "modules": ["global_ribbon", "header1"]
     },
     "main": {
         "type": "main",
-        "modules": ["global_ribbon", "module123"]
+        "modules": []
     },
     "footer": {
         "type": "footer",

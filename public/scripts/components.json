@@ -1,0 +1,84 @@
+{
+    "template": "{{#each components}}<div id='component{{name}}' draggable='true' class='component'><i class='{{icon}}'></i><label>{{name}}</label></div>{{/each}}",
+    "data": {
+        "components": [
+            {
+                "name": "Text",
+                "label": "Text",
+                "icon": "fa-solid fa-align-left",
+                "data": {
+                    "template": "{{>text text1}}",
+                    "data": {
+                        "text1": {
+                            "data-type": "text",
+                            "text": "This is some text.",
+                            "type": "span",
+                            "class": ""
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Title",
+                "label": "Title",
+                "icon": "fa-solid fa-text",
+                "data": {
+                    "template": "{{>text title1}}",
+                    "data": {
+                        "title1": {
+                            "data-type": "title",
+                            "text": "Page Title",
+                            "type": "h1",
+                            "class": ""
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Link",
+                "label": "Link",
+                "icon": "fa-solid fa-link",
+                "data": {
+                    "template": "{{>link link1}}",
+                    "data": {
+                        "link1": {
+                        "data-type": "link",
+                        "text": "link",
+                        "href": "/",
+                        "class": "",
+                        "name" : "Page2 Link"
+                    }
+                }
+                }
+            },
+            {
+                "name": "Button",
+                "icon": "fa-solid fa-rectangle-wide"
+            },
+            {
+                "name": "Icon",
+                "icon": "fa-solid fa-icons"
+            },
+            {
+                "name": "Divider",
+                "icon": "fa-solid fa-horizontal-rule"
+            },
+            {
+                "name": "Container",
+                "icon": "fa-solid fa-square-dashed"
+            },
+            {
+                "name": "Image",
+                "icon": "fa-solid fa-image"
+            },
+            {
+                "name": "Video",
+                "icon": "fa-solid fa-video"
+            },
+            {
+                "name": "Audio",
+                "icon": "fa-solid fa-audio"
+            }
+        ]
+    }
+}

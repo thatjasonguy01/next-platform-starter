@@ -1,0 +1,466 @@
+{
+    "template": "{{#each sections}}{{#dynamic this}}{{/dynamic}}{{/each}}",
+    "data": {
+        "sections": [
+            {
+                "template": "<div{{#if this.class}} class='{{this.class}}'{{/if}}><h5>{{this.title.text}}</h5><div class='row'>{{#each this.settings}}<div class='item{{#if this.class}} {{this.class}}{{/if}}'>{{#dynamic this}}{{/dynamic}}</div>{{/each}}</div>",
+                "name": "pagesettings",
+                "class": "section",
+                "title": {
+                    "text": "Page Settings",
+                    "type": "h5"
+                },
+                "settings": [
+                    {
+                        "name": "name",
+                        "template": "{{>input}}",
+                        "type": "input",
+                        "label": "Name",
+                        "binding": {
+                            "action": "getAttr",
+                            "attr": "data-name"
+                        },
+                        "triggers": {
+                            "change": [
+                                {
+                                    "action": "addAttr",
+                                    "attr": "data-name",
+                                    "removeReg": "()"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "alignment",
+                        "template": "{{>buttongroups}}",
+                        "type": "buttongroup",
+                        "label": "Alignment",
+                        "showfor": "div",
+                        "binding": {
+                            "action": "getClass"
+                        },
+                        "options": [
+                            {
+                                "label": "Horizontal Alignment",
+                                "removeRegex": "\\w*(justify-content-[vp]-*)\\w*",
+                                "buttons": [
+                                    {
+                                        "icon": "fa-solid fa-objects-align-left",
+                                        "value": "justify-content-[vp]-start"
+                                    },
+                                    {
+                                        "icon": "fa-solid fa-objects-align-center-horizontal",
+                                        "value": "justify-content-[vp]-center"
+                                    },
+                                    {
+                                        "icon": "fa-solid fa-objects-align-right",
+                                        "value": "justify-content-[vp]-end"
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "Horizontal Alignment",
+                                "removeRegex": "\\w*(align-items-[vp]-*)\\w*",
+                                "buttons": [
+                                    {
+                                        "icon": "fa-solid fa-objects-align-top",
+                                        "value": "align-items-[vp]-start"
+                                    },
+                                    {
+                                        "icon": "fa-solid fa-objects-align-center-vertical",
+                                        "value": "align-items-[vp]-center"
+                                    },
+                                    {
+                                        "icon": "fa-solid fa-objects-align-bottom",
+                                        "value": "align-items-[vp]-end"
+                                    }
+                                ]
+                            }
+                        ],
+                        "triggers": {
+                            "click": [
+                                {
+                                    "action": "addClass",
+                                    "removeReg": "()"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "width",
+                        "template": "{{>input}}",
+                        "type": "input",
+                        "label": "Width",
+                        "class": "col-6",
+                        "units": ["px", "rem", "vh", "vw"],
+                        "binding": {
+                            "action": "getAttr",
+                            "attr": "data-placeholder"
+                        },
+                        "triggers": {
+                            "change": [
+                                {
+                                    "action": "addAttr",
+                                    "attr": "data-name",
+                                    "removeReg": "()"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "height",
+                        "template": "{{>input}}",
+                        "type": "input",
+                        "label": "Height",
+                        "class": "col-6",
+                        "units": ["px", "rem", "vh", "vw"],
+                        "binding": {
+                            "action": "getAttr",
+                            "attr": "data-placeholder"
+                        },
+                        "triggers": {
+                            "change": [
+                                {
+                                    "action": "addAttr",
+                                    "attr": "data-name",
+                                    "removeReg": "()"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "position",
+                        "template": "{{>select}}",
+                        "type": "select",
+                        "label": "Position",
+                        "options": [
+                            {
+                                "label": "",
+                                "value": "",
+                                "default": true
+                            },
+                            {
+                                "label": "Relative",
+                                "value": "relative"
+                            },
+                            {
+                                "label": "Absolute",
+                                "value": "absolute"
+                            }
+                        ],
+                        "triggers": {
+                            "change": [
+                                {
+                                    "action": "addClass",
+                                    "removeReg": "()"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "position-x",
+                        "template": "{{>input}}",
+                        "type": "input",
+                        "label": "Position",
+                        "class": "col-6",
+                        "units": ["px", "rem", "vh", "vw"],
+                        "showforCSS": {
+                            "position": "absolute"
+                        },
+                        "binding": {
+                            "action": "getAttr",
+                            "attr": "data-placeholder"
+                        },
+                        "triggers": {
+                            "change": [
+                                {
+                                    "action": "addAttr",
+                                    "attr": "data-name",
+                                    "removeReg": "()"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "position-y",
+                        "template": "{{>input}}",
+                        "type": "input",
+                        "label": " ",
+                        "class": "col-6",
+                        "units": ["px", "rem", "vh", "vw"],
+                        "showforCSS": {
+                            "position": "absolute"
+                        },
+                        "binding": {
+                            "action": "getAttr",
+                            "attr": "data-placeholder"
+                        },
+                        "triggers": {
+                            "change": [
+                                {
+                                    "action": "addAttr",
+                                    "attr": "data-name",
+                                    "removeReg": "()"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "display",
+                        "template": "{{>buttongroups}}",
+                        "type": "buttongroup",
+                        "label": "Display",
+                        "binding": {
+                            "action": "getClass"
+                        },
+                        "options": [
+                            {
+                                "removeRegex": "\\w*(justify-content-*)\\w*",
+                                "buttons": [
+                                    {
+                                        "icon": "fa-solid fa-empty-set",
+                                        "value": ""
+                                    },
+                                    {
+                                        "icon": "fa-solid fa-arrows-cross",
+                                        "value": "flex"
+                                    },
+                                    {
+                                        "icon": "fa-solid fa-arrow-right",
+                                        "value": "inline"
+                                    },
+                                    {
+                                        "icon": "fa-solid fa-arrow-right-to-bracket",
+                                        "value": "justify-content-center"
+                                    },
+                                    {
+                                        "icon": "fa-solid fa-turn-down-right",
+                                        "value": "justify-content-end"
+                                    }
+                                ]
+                            }
+                        ],
+                        "triggers": {
+                            "click": [
+                                {
+                                    "action": "addClass",
+                                    "removeReg": "()"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "direction",
+                        "template": "{{>buttongroups}}",
+                        "type": "buttongroup",
+                        "label": "Layout Direction",
+                        "binding": {
+                            "action": ""
+                        },
+                        "options": [
+                            {
+                                "removeRegex": "\\w*(flex-(row|column))\\w*",
+                                "buttons": [
+                                    {
+                                        "icon": "fa-solid fa-arrows-left-right",
+                                        "value": "flex-row"
+                                    },
+                                    {
+                                        "icon": "fa-solid fa-arrows-up-down",
+                                        "value": "flex-column"
+                                    }
+                                ]
+                            }
+                        ],
+                        "triggers": {
+                            "click": [
+                                {
+                                    "action": "addClass",
+                                    "removeReg": "()"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "textstyle",
+                        "template": "{{>buttongroups}}",
+                        "type": "buttongroup",
+                        "label": "Text Type (SEO)",
+                        "showfor": "h1, h2, h3, h4, h5, p, span",
+                        "binding": {
+                            "action": "getClass"
+                        },
+                        "options": [
+                            {
+                                "removeRegex": "\\w*(justify-content-*)\\w*",
+                                "buttons": [
+                                    {
+                                        "icon": "fa-solid fa-h1",
+                                        "value": "h1"
+                                    },
+                                    {
+                                        "icon": "fa-solid fa-h2",
+                                        "value": "h2"
+                                    },
+                                    {
+                                        "icon": "fa-solid fa-h3",
+                                        "value": "h3"
+                                    },
+                                    {
+                                        "icon": "fa-solid fa-h4",
+                                        "value": "h4"
+                                    },
+                                    {
+                                        "icon": "fa-solid fa-h5",
+                                        "value": "h5"
+                                    },
+                                    {
+                                        "icon": "fa-solid fa-h6",
+                                        "value": "h6"
+                                    },
+                                    {
+                                        "icon": "fa-solid fa-p",
+                                        "value": "p"
+                                    },
+                                    {
+                                        "icon": "fa-solid fa-text",
+                                        "value": "span"
+                                    }
+                                ]
+                            }
+                        ],
+                        "triggers": {
+                            "click": [
+                                {
+                                    "action": "addClass",
+                                    "removeReg": "()"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "class",
+                        "template": "{{>input}}",
+                        "type": "input",
+                        "label": "Class",
+                        "placeholder": "",
+                        "binding": {
+                            "action": "getClass"
+                        },
+                        "triggers": {
+                            "change": [
+                                {
+                                    "action": "addClass"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "displayallpages",
+                        "template": "{{>switch}}",
+                        "type": "switch",
+                        "label": "Display on all pages",
+                        "showfor": ".module"
+                    },
+                    {
+                        "name": "buttonicon",
+                        "template": "{{>switch}}",
+                        "type": "switch",
+                        "label": "Button has Icon",
+                        "showfor": "button, .btn"
+                    },
+                    {
+                        "name": "collapsemenu",
+                        "template": "{{>buttongroups}}",
+                        "type": "buttongroup",
+                        "label": "Collapse Menu",
+                        "showfor": ".navbar",
+                        "binding": {
+                            "action": "getClass"
+                        },
+                        "options": [
+                            {
+                                "removeRegex": "\\w*(justify-content-*)\\w*",
+                                "buttons": [
+                                    {
+                                        "icon": "fa-solid fa-globe",
+                                        "value": ""
+                                    },
+                                    {
+                                        "icon": "fa-solid fa-mobile-screen",
+                                        "value": "navbar-expand-sm"
+                                    },
+                                    {
+                                        "icon": "fa-solid fa-tablet-screen",
+                                        "value": "navbar-expand-md"
+                                    },
+                                    {
+                                        "icon": "fa-solid fa-laptop",
+                                        "value": "navbar-expand-lg"
+                                    },
+                                    {
+                                        "icon": "fa-solid fa-empty-set",
+                                        "value": ""
+                                    }
+                                ]
+                            }
+                        ],
+                        "triggers": {
+                            "click": [
+                                {
+                                    "action": "addClass",
+                                    "removeReg": "()"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "name": "contentwidth",
+                        "template": "{{>buttongroups}}",
+                        "type": "buttongroup",
+                        "label": "Module Width",
+                        "showfor": ".module",
+                        "binding": {
+                            "action": "getClass"
+                        },
+                        "options": [
+                            {
+                                "removeRegex": "\\w*(justify-content-*)\\w*",
+                                "buttons": [
+                                    {
+                                        "icon": "fa-solid fa-arrows-left-right-to-line",
+                                        "value": "container"
+                                    },
+                                    {
+                                        "icon": "fa-solid fa-arrows-left-right",
+                                        "value": "container-fluid"
+                                    },
+                                    {
+                                        "icon": "fa-solid fa-empty-set",
+                                        "value": ""
+                                    }
+                                ]
+                            }
+                        ],
+                        "triggers": {
+                            "click": [
+                                {
+                                    "action": "addClass",
+                                    "removeReg": "()"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "template": "{{>range}}",
+                        "type": "range",
+                        "label": "Speed",
+                        "min": 0,
+                        "max": 5,
+                        "step": 0.5
+                    }
+                ]
+            }
+        ]
+    }
+}

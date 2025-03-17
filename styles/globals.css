@@ -43,16 +43,26 @@ a {
 #pageBuilder{
     display: flex;
     flex-direction: column;
-    height: 100vh;
-    background-color: rgb(17, 28, 45);
+    min-height: 100vh;
+    background-color: #333;
     color: rgb(234, 239, 244);
     box-shadow: rgb(145 158 171 / 30%) 0px 0px 2px 0px, rgb(145 158 171 / 2%) 0px 12px 24px -4px;;
-    
+}
 
+#pageBuilder h5{
+    color: #fff;
+    font-size: 13px;
+}
+
+#pageBuilder label{
+    display: block;
+    font-size: 11px;
+    color: #b9b3b3;
+    margin-bottom: .25rem;
+    min-height: 1rem;
 }
 
 #navMain{
-    height: 45px;
     width: 100%;
     display: block;
     order: 5;
@@ -63,18 +73,71 @@ a {
 }
 
 .panel{
-    box-shadow: rgb(145 158 171 / 30%) 0px 0px 2px 0px, rgb(145 158 171 / 2%) 0px 12px 24px -4px;;
+    box-shadow: rgb(145 158 171 / 30%) 0px 0px 2px 0px, rgb(145 158 171 / 2%) 0px 12px 24px -4px;
+    padding: .75rem;
+}
+
+.panel .item{
+    margin-bottom: .5rem;
+}
+
+.panel .input-wrapper {
+    width: 100%;
+    display: flex;
+}
+
+.panel .dropdown{
+    width: 100%;
+}
+
+.panel .dropdown .btn{
+    text-align: right;
+    width: 100%;
+}
+
+.panel .dropdown-menu{
+    min-width: unset;
+    background-color: #333;
+}
+
+.panel .dropdown-menu li {
+    width: fit-content;
+}
+
+.panel .dropdown-item{
+    color: #fff;
+    font-size: 12px;
+}
+
+.panel input, .panel select{
+    width: 100%;
 }
 
 #pnlEdit{
     display: none;
 }
 
+.admin{
+    display: none;
+}
+
 #pnlComponents{
     order: 1;
     height: 40%;
-    width: 100%;
+    width: 300px;
     display: none;
+}
+
+div#pnlComponents > div {
+    background-color: #212529;
+    border: solid 1px transparent;
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    margin: .25rem;
+    padding: .25rem;
+    text-align: center;
+    width: 80px;
 }
 
 #pnlStyles{
@@ -91,20 +154,70 @@ a {
 
 #canvasWrapper{
     width: 100%;
+    flex-grow: 1;
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+}
+
+#canvasbackdrop{
+    width: 100%;
     height: 100%;
     flex-grow: 1;
     display: flex;
     align-items: center;
-    background-color: #3c3c3c;
+    background-color: #000;
     padding: .5rem;
     flex-direction: column;
+
 }
 
 #canvas{
     width: 375px;
     flex-grow: 1;
-
 }
+
+#btnsCanvasMode{
+    position: absolute;
+    bottom: 3rem; 
+    right: 2rem;
+}
+
+#pageBuilder .form-control, #pageBuilder .form-select{
+    background-color: #212529;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+}
+
+#pageBuilder .btn{
+    background-color: #212529;
+    border: none;
+    color: #fff;
+    border-radius: 0;
+}
+
+.btn-sm{
+    height: 30px;
+    min-height: 28px;
+    
+}
+
+.btn-circle{
+    border-radius: 50%;
+}
+
+.btn-circle + .btn-circle{
+    margin-left: 1rem;
+}
+
+#btnsCanvasMode > button{
+    border-radius: 50%;
+}
+
+#btnsCanvasMode #btnSave, #btnsCanvasMode #btnCancelEdit{
+    display: none;
+} 
 
 @media (width >= 48rem) {
     #pageBuilder{
@@ -121,9 +234,9 @@ a {
         width: 100%;
     }
 
-    #pnlComponents{
+    #pnlComponent, #pnlSettings{
         height: 100%;
-        width: 200px;
+        max-width: 300px;
         display: flex;
         order: 0;
     }
@@ -131,7 +244,8 @@ a {
     #pnlStyles{
         order: 1;
         height: 100%;
-        width: 200px;
+        max-width: 250px;
+        width: auto;
         display: flex;
     }
     

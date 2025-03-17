@@ -1,0 +1,51 @@
+[
+    {
+        "sel": ".main-title",
+        "class": [
+            {
+                "vp": [ 
+                    {"vp": "xs","params": [{"font-size": "55px"}]}
+                ]
+            },
+            {
+                "p": ":hover", 
+                "vp": [{"vp": "xs","params": [{"font-weight": "bold"}]}
+                ]
+            }
+        ]
+    },
+    {
+        "sel": "h1",
+        "type": "title",
+        "class": [
+            {
+                "vp": [
+                    {"vp": "xs","parmas": [{"font-size": "2.5rem"},{"margin-bottom": ".5rem"},{"line-height": "1.2"}]},
+                    {"vp": "md", "params": [{"font-size": "2.0rem"},{"margin-bottom": ".25rem"}]}
+                ]
+            }
+        ]
+    },
+    {
+        "sel": ".btn",
+        "type": "links & buttons",
+        "class": [
+            {
+                "vp": [
+                    {
+                        "vp": "xs",
+                        "params": [
+                            {
+                                "width": "100%"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
+
+
+
+

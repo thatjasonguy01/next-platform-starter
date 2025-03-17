@@ -1,0 +1,24 @@
+{
+    "template":
+        "{{>block module}}{{>block container1}}{{>text title1}}{{>link link1}}{{>endblock}}{{>endblock}}",
+    "module": {
+        "data-type": "module",
+        "class": "module"
+    },
+    "container1": {
+        "data-type": "container",
+        "class": "container"
+    },
+    "title1": {
+        "data-type": "title",
+        "text": "Page 2",
+        "type": "h1",
+        "class": ""
+    },
+    "link1": {
+        "data-type": "link",
+        "text": "Home",
+        "href": "/home",
+        "class": "btn btn-primary"
+    }
+}

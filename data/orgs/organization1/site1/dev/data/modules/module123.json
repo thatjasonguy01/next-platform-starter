@@ -1,6 +1,6 @@
 {
     "template":
-        "{{>block module}}{{>block container1}}{{>block row1}}{{>block column1}}{{>text title1}}{{>text title2}}{{>text title3}}{{>text title4}}{{>text title5}}{{>img img1}}<br><br>{{>link link1}}{{>endblock}}{{>endblock}}{{>endblock}}{{>endblock}}",
+        "{{>block module}}{{>block container1}}{{>block row1}}{{>block column1}}{{>text title1}}{{>text title2}}{{>text title3}}{{>text title4}}{{>text title5}}{{>img img1}}<br><br>{{>link link1}}<br><br>{{>link link2}}{{>endblock}}{{>endblock}}{{>endblock}}{{>endblock}}",
     "module": {
         "data-type": "module",
         "class": "module"
@@ -14,49 +14,61 @@
         "class": "row"
     },
     "column1": {
-        "data-type": "column",
-        "class": "col-3"
+        "data-type": "column"
     },
     "link1": {
         "data-type": "link",
-        "text": "Google",
-        "href": "https://www.google.com",
+        "text": "Page2",
+        "href": "/page2",
         "class": "btn btn-primary",
-        "target": "_blank"
+         "name" : "Page2 Link"
+    },
+    "link2": {
+        "data-type": "link",
+        "text": "Page3",
+        "href": "/page2/page3",
+        "class": "btn btn-primary",
+         "name" : "Page3 Link"
     },
     "title1": {
         "data-type": "title",
         "text": "Page Title",
         "type": "h1",
-        "class": ""
+        "class": "",
+        "name" : "Page Title"
     },
     "title2": {
         "data-type": "title",
         "text": "Section Title",
         "type": "h2",
-        "class": ""
+        "class": "",
+         "name" : "Section Title"
     },
     "title3": {
         "data-type": "title",
         "text": "Group Title",
         "type": "h3",
-        "class": ""
+        "class": "",
+         "name" : "Group Title"
     },
     "title4": {
         "data-type": "title",
         "text": "This is a paragraph",
         "type": "p",
-        "class": ""
+        "class": "",
+         "name" : "Paragraph"
     },
     "title5": {
         "data-type": "title",
         "text": "This is a paragraph",
         "type": "span",
-        "class": ""
+        "class": "",
+         "name" : "Span"
     }, 
     "img1": {
         "data-type": "image",
         "src": "/sites/site1/assets/palmtrees.jpg",
-        "style": "width: 100px; display: block;"
+        "style": "width: 100px; display: block;",
+         "name" : "Image Main"
     }
 }
