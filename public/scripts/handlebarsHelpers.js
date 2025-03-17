@@ -21,6 +21,10 @@ Handlebars.registerPartial(
     "link",
     "<a{{>config}} href='{{@root.settings.httpalias}}{{this.href}}'{{#if this.target}} target='{{this.target}}'{{/if}}{{#if this.class}} class='{{this.class}}'{{/if}}>{{this.text}}</a>"
 );
+Handlebars.registerPartial( 
+    "button",
+    "<a{{>config}} href='{{@root.settings.httpalias}}{{this.href}}'{{#if this.target}} target='{{this.target}}'{{/if}} class='btn{{#if this.class}} {{this.class}}{{/if}}'>{{this.text}}</a>"
+);
 Handlebars.registerPartial(
     "text",
     "<{{this.type}}{{>config}}{{#if this.class}} class='{{this.class}}'{{/if}}>{{this.text}}</{{this.type}}>"

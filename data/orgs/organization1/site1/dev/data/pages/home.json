@@ -16,7 +16,7 @@
     },
     "main": {
         "type": "main",
-        "modules": ["module123", "header1", "header3"]
+        "modules": ["module123"]
     },
     "footer": {
         "type": "footer",

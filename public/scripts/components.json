@@ -42,18 +42,34 @@
                     "template": "{{>link link1}}",
                     "data": {
                         "link1": {
-                        "data-type": "link",
-                        "text": "link",
-                        "href": "/",
-                        "class": "",
-                        "name" : "Page2 Link"
+                            "data-type": "link",
+                            "text": "link",
+                            "href": "/",
+                            "class": "",
+                            "name": "Link1"
+                        }
                     }
-                }
                 }
             },
             {
                 "name": "Button",
-                "icon": "fa-solid fa-rectangle-wide"
+                "label": "Button",
+                "icon": "fa-solid fa-rectangle-wide",
+                "data": {
+                    "template": "{{>button button1}}",
+                    "data": {
+                        "settings": {
+                    "mode": "edit"
+                },  
+                        "button1": {
+                            "data-type": "button",
+                            "text": "Button",
+                            "href": "/",
+                            "class": "btn-primary",
+                            "name": "Button1"
+                        }
+                    }
+                }
             },
             {
                 "name": "Icon",

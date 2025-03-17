@@ -96,10 +96,11 @@ window['viewport'] = "";
         var bindCanvas = function ($elements) {
 
             $elements.not('[data-noedit]').off('mousedown').on('click dblclick', function (e) {
+                e.preventDefault();
                 e.stopPropagation();
                 e.stopImmediatePropagation();
 
-                selectCanvasElement($(this))
+                selectCanvasElement($(e.target))
                 $('#pnlSettings').show();
                 $('#pnlComponents').hide();
             });
@@ -114,7 +115,6 @@ window['viewport'] = "";
             target.attr('data-selected', '');
 
             $(window).trigger('positionContextMarker');
-
         }
 
         var enterEditMode = function () {
@@ -246,13 +246,18 @@ window['viewport'] = "";
                             right: offscreenRight ? 0 : 'unset'
                         })
                 } else {
-                    $('#tokenMenu', $win).hide();
+                    $('#tokenMenu', canvas).hide();
                 }
             }
             catch (e) {
                 console.log(e);
             }
         }
+
+        plugin.bindCanvas = function($elements) {
+            bindCanvas($elements);
+        }
+
         return plugin.init();
 
     }

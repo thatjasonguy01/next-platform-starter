@@ -181,19 +181,24 @@
                         //});
 
                         $insertionPoint.after(HTML).after(' ');
+
                         //$.setNextElementID($scope);
 
                         //$.each($('[data-templateid]', $scope), function () {
                         //    templateData.Data.Body[$(this).attr('data-name')]['ID'] = $(this).attr('ID');
-                        //});
+                        //});   
 
                         //var initScripts = Handlebars.compile(templateData.Scripts.Body)(templateData).trim();
 
                         //addScriptsToPage(templateData.JS, 'try {' + Handlebars.compile(templateData.Scripts.Body)(templateData).trim() + '} catch(e)  { console.log(e); }');
                             
-                        //App.resizeImages();
+                        //App.resizeImages();   
                         //$.getWindow().find('Body').data('ContentManager').bindContentManager($scope);
+
+                        $('#pageBuilder').data('PageBuilder').bindCanvas($(HTML));
                     }
+
+
                     //$.setUpdatedStatus("ModuleSetting", moduleId, true);
                     
                 }
