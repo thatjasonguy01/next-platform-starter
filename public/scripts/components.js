@@ -226,7 +226,7 @@
             $element.append(Handlebars.compile(config.template)(config.data));
             
             $.each(config.data.components, function(i, JSON) {
-                $('#component' + JSON.name).data(JSON.data);
+                $('#component' + JSON.name).data(JSON);
             });  
 
             setTimeout(setupDragDrop(), 0);

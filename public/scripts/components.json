@@ -6,15 +6,16 @@
                 "name": "Text",
                 "label": "Text",
                 "icon": "fa-solid fa-align-left",
+                "template": "{{>text text1}}",
                 "data": {
-                    "template": "{{>text text1}}",
-                    "data": {
-                        "text1": {
-                            "data-type": "text",
-                            "text": "This is some text.",
-                            "type": "span",
-                            "class": ""
-                        }
+                    "text1": {
+                        "data-type": "text",
+                        "text": "This is some text.",
+                        "type": "span",
+                        "class": ""
+                    },
+                    "settings": {
+                        "mode": "edit"
                     }
                 }
             },
@@ -22,15 +23,16 @@
                 "name": "Title",
                 "label": "Title",
                 "icon": "fa-solid fa-text",
+                "template": "{{>text title1}}",
                 "data": {
-                    "template": "{{>text title1}}",
-                    "data": {
-                        "title1": {
-                            "data-type": "title",
-                            "text": "Page Title",
-                            "type": "h1",
-                            "class": ""
-                        }
+                    "title1": {
+                        "data-type": "title",
+                        "text": "Page Title",
+                        "type": "h1",
+                        "class": ""
+                    },
+                    "settings": {
+                        "mode": "edit"
                     }
                 }
             },
@@ -38,16 +40,17 @@
                 "name": "Link",
                 "label": "Link",
                 "icon": "fa-solid fa-link",
+                "template": "{{>link link1}}",
                 "data": {
-                    "template": "{{>link link1}}",
-                    "data": {
-                        "link1": {
-                            "data-type": "link",
-                            "text": "link",
-                            "href": "/",
-                            "class": "",
-                            "name": "Link1"
-                        }
+                    "link1": {
+                        "data-type": "link",
+                        "text": "link",
+                        "href": "/",
+                        "class": "",
+                        "name": "Link1"
+                    },
+                    "settings": {
+                        "mode": "edit"
                     }
                 }
             },
@@ -55,25 +58,36 @@
                 "name": "Button",
                 "label": "Button",
                 "icon": "fa-solid fa-rectangle-wide",
+                "template": "{{>button button1}}",
                 "data": {
-                    "template": "{{>button button1}}",
-                    "data": {
-                        "settings": {
-                    "mode": "edit"
-                },  
-                        "button1": {
-                            "data-type": "button",
-                            "text": "Button",
-                            "href": "/",
-                            "class": "btn-primary",
-                            "name": "Button1"
-                        }
+                    "button1": {
+                        "data-type": "button",
+                        "text": "Button",
+                        "href": "/",
+                        "class": "btn-primary",
+                        "name": "Button1"
+                    },
+                    "settings": {
+                        "mode": "edit"
                     }
                 }
             },
             {
                 "name": "Icon",
-                "icon": "fa-solid fa-icons"
+                "label": "Icon",
+                "icon": "fa-solid fa-icons",
+                "template": "{{>icon icon1}}",
+                "data": {
+                    "icon1": {
+                        "data-type": "icon",
+                        "text": "Icon",
+                        "class": "fa-solid fa-icons",
+                        "name": "Icon1"
+                    },
+                    "settings": {
+                        "mode": "edit"
+                    }
+                }
             },
             {
                 "name": "Divider",

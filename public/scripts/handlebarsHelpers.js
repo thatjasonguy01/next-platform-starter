@@ -33,6 +33,10 @@ Handlebars.registerPartial(
     "img",
     "<img{{>config}} src='{{this.src}}'{{#if this.class}} class='{{this.class}}'{{/if}}{{#if this.style}} style='{{this.style}}'{{/if}} />"
 );
+Handlebars.registerPartial(
+    "icon",
+    "<i{{>config}} class='{{#if this.class}}{{this.class}}{{/if}}'{{#if this.style}} style='{{this.style}}'{{/if}}></i>"
+);
 Handlebars.registerHelper('compare', function (lvalue, operator, rvalue, options) {
 
     var operators, result;
