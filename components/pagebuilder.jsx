@@ -53,18 +53,18 @@ export function PageBuilder({ title, text, linkText, href, children }) {
 
                         
                         <div id="pnlDesigner" className="admin">
-                                <nav id="navTabsDesigner"><button className="btn btn-sm" data-target="#pnlComponents">Components</button><button className="btn btn-sm"  data-target="#pnlSettings">Settings</button></nav>
+                                <nav id="navTabsDesigner" className="nav"><a className="nav-link active" data-target="#pnlComponents">Components</a><a className="nav-link" data-target="#pnlSettings">Settings</a></nav>
 
                             <Components></Components>
                             <Settings></Settings>
                         </div>
-                        <div id="canvasWrapper" className="panel">
+                        <div id="canvasWrapper">
                             <div className="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-                                <div id="navPreviewSize" className="btn-group me-2" role="group" aria-label="First group">
-                                    <button type="button" className="btn btn-sm" data-width="390px" data-size="xs" data-height="844px" data-minwidth="" data-value="390x844" data-title="mobile and up"><i className="fa-solid fa-mobile-screen"></i></button>
-                                    <button type="button" className="btn btn-sm" data-width="769px" data-size="md" data-height="1024px" data-minwidth="" data-value="769x1024" data-title="tablets and up"><i className="fa-solid fa-tablet-screen-button"></i></button>
-                                    <button type="button" className="btn btn-sm" data-width="100%" data-height="100%" data-minwidth="1200" data-value="1024x768" data-size="lg" data-title="desktops"><i className="fa-solid fa-laptop"></i></button>
-                                </div>
+                                <nav id="navPreviewSize" className="nav m-auto" role="group" aria-label="First group">
+                                    <a type="button" className="nav-link px-2 active" data-width="390px" data-size="xs" data-height="844px" data-minwidth="" data-value="390x844" data-title="mobile and up"><i className="fa-solid fa-mobile-screen"></i></a>
+                                    <a type="button" className="nav-link px-2" data-width="769px" data-size="md" data-height="1024px" data-minwidth="" data-value="769x1024" data-title="tablets and up"><i className="fa-solid fa-tablet-screen-button"></i></a>
+                                    <a type="button" className="nav-link px-2" data-width="100%" data-height="100%" data-minwidth="1200" data-value="1024x768" data-size="lg" data-title="desktops"><i className="fa-solid fa-laptop"></i></a>
+                                </nav>
                             </div>
                             <div id="canvasbackdrop" className="panel">
                                 <iframe id="canvas"
