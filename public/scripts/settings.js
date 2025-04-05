@@ -40,13 +40,8 @@
                 "input",
                 "<label id='lbl{{type}}{{name}}' for='input{{name}}' class='form-label'>{{label}}</label><div class='input-wrapper'><input id='{{type}}{{name}}'{{#if inputtype}} type='{{inputtype}}'{{/if}} class='form-control form-control-sm{{#if units}} hasunits{{/if}}' '{{#if placeholder}} placeholder='{{placeholder}}'{{/if}}{{#if min}} min='{{min}}'{{/if}}{{#if max}} max='{{max}}'{{/if}}{{#if step}} step='{{step}}'{{/if}}>{{#if units}}<div class='dropdown'><button class='btn btn-sm btn-secondary dropdown-toggle' type='button' data-bs-toggle='dropdown' aria-expanded='false'></button><ul class='dropdown-menu dropdown-menu-end'>{{#each units}}<li><a class='dropdown-item' href='#'>{{this}}</a></li>{{/each}}</ul></div>{{/if}}</div>"            
             );
-            //Handlebars.registerPartial(
-            //    "inputAppend",
-            //    "<label id='lbl{{type}}{{name}}' for='{{../../name}}_{{name}}' class='form-label'>{{label}}</label><input  id='{{type}}{{name}}' type='text' class='form-control' aria-label='Sizing example input' aria-describedby='inputGroup-sizing-sm'><div class='input-group input-group-sm'><span class='input-group-text' id='inputGroup-sizing-sm'>Small</span></div>"
-            //);
             Handlebars.registerPartial(
                 "select",
-                //"<label id='lbl{{type}}{{name}}'>{{this.label}}</label><select  id='{{type}}{{name}}' class='form-select form-select-sm' {{#compare multiple '==' 'true'}} multiple{{/compare}} aria-label='{{label}}'>{{#each options}}<option {{#compare default '==' true}}selected{{/compare}} val='{{value}}'>{{label}}</option>{{/each}}</select>"
                 "<div class='dropdown'><button class='btn btn-sm btn-secondary dropdown-toggle' type='button' data-bs-toggle='dropdown' aria-expanded='false'></button><ul class='dropdown-menu dropdown-menu-end'>{{#each options}}<li><a class='dropdown-item' href='#'val='{{value}}'>{{label}}</a></li>{{/each}}</ul></div>"
             );
             Handlebars.registerPartial(
@@ -93,8 +88,11 @@
                                 });
                                 //$('[' + plugin.settings.target.attr('class') + ']').addClass('active').siblings.removeClass('active');
                                 break;
-                        }
-                        
+                        }  
+                    break;
+                    case 'getStyle':
+                        $('#' + settings.type + settings.name).val(plugin.settings.target.css(settings.property));
+                        break;
                     break;
                 }
             }
@@ -115,7 +113,7 @@
                             plugin.settings.target.removeAttr(trigger.attr).attr(trigger.attr,  value);
                             return;
                         case 'addStyle':
-                            plugin.settings.target.attr('style',  value);
+                            plugin.settings.target.css(settings.property,  value);
                             return;
                     }
                 })

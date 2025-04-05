@@ -91,11 +91,33 @@
             },
             {
                 "name": "Divider",
-                "icon": "fa-solid fa-horizontal-rule"
+                "label": "Divider",
+                "icon": "fa-solid fa-horizontal-rule",
+                "template": "{{>hr hr1}}",
+                "data": {
+                    "hr1": {
+                        "data-type": "hr",
+                        "name": "Divider1"
+                    },
+                    "settings": {
+                        "mode": "edit"
+                    }
+                }
             },
             {
                 "name": "Container",
-                "icon": "fa-solid fa-square-dashed"
+                "label": "Container",
+                "icon": "fa-solid fa-square-dashed",
+                "template": "{{>block block1}}",
+                "data": {
+                    "block1": {
+                        "data-type": "block",
+                        "name": "Block1"
+                    },
+                    "settings": {
+                        "mode": "edit"
+                    }
+                }
             },
             {
                 "name": "Image",

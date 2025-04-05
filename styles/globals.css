@@ -197,10 +197,22 @@ div#pnlComponents > div {
     border-radius: 0;
 }
 
+#pageBuilder .nav-link{
+    color: #fff;
+    font-size: 12px;
+}
+
+#pageBuilder .nav-link:hover{
+    cursor: pointer;
+}
+
+#pageBuilder .nav-link.active{
+    background-color: #212529;
+}
+
 .btn-sm{
     height: 30px;
     min-height: 28px;
-    
 }
 
 .btn-circle{
@@ -219,6 +231,10 @@ div#pnlComponents > div {
     display: none;
 } 
 
+
+
+
+
 @media (width >= 48rem) {
     #pageBuilder{
         flex-direction: column;
@@ -236,7 +252,7 @@ div#pnlComponents > div {
 
     #pnlComponent, #pnlSettings{
         height: 100%;
-        max-width: 300px;
+        width: 300px;
         display: flex;
         order: 0;
     }

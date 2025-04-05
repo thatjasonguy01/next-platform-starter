@@ -22,8 +22,6 @@ export default function handler(req, res) {
     } else {
         res.status(404).json({ message: 'File Not Found' });      
     }
-
-    res.status(200).json(data);
   }
 }
 

@@ -93,16 +93,15 @@
                         "label": "Width",
                         "class": "col-6",
                         "units": ["px", "rem", "vh", "vw"],
+                        "property": "width",
                         "binding": {
-                            "action": "getAttr",
+                            "action": "getStyle",
                             "attr": "data-placeholder"
                         },
                         "triggers": {
-                            "change": [
+                            "input": [
                                 {
-                                    "action": "addAttr",
-                                    "attr": "data-name",
-                                    "removeReg": "()"
+                                    "action": "addStyle"
                                 }
                             ]
                         }
@@ -114,16 +113,16 @@
                         "label": "Height",
                         "class": "col-6",
                         "units": ["px", "rem", "vh", "vw"],
+                        "property": "height",
                         "binding": {
-                            "action": "getAttr",
+                            "action": "getStyle",
                             "attr": "data-placeholder"
                         },
                         "triggers": {
-                            "change": [
+                            "input": [
                                 {
-                                    "action": "addAttr",
-                                    "attr": "data-name",
-                                    "removeReg": "()"
+                                    "action": "addStyle"
+                                    
                                 }
                             ]
                         }

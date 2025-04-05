@@ -3,7 +3,7 @@ Handlebars.registerHelper('dynamic', function (data, context, options) {
 });
 Handlebars.registerPartial(
     "config",
-    "{{#compare @root.settings.mode '==' 'edit'}} data-editable data-name='{{this.name}}' data-type='{{this.data-type}}' {{/compare}}"
+    "{{#compare @root.settings.mode '==' 'edit'}} data-editable data-name='{{this.name}}' data-type='{{this.data-type}}' {{#if this.type}}{{#isContentEditable type}}{{/isContentEditable}}{{/if}}{{/compare}}"
 )
 Handlebars.registerPartial(
     "head",
@@ -37,7 +37,16 @@ Handlebars.registerPartial(
     "icon",
     "<i{{>config}} class='{{#if this.class}}{{this.class}}{{/if}}'{{#if this.style}} style='{{this.style}}'{{/if}}></i>"
 );
-Handlebars.registerHelper('compare', function (lvalue, operator, rvalue, options) {
+Handlebars.registerPartial(
+    "hr",
+    "<hr{{>config}} class='{{#if this.class}}{{this.class}}{{/if}}'{{#if this.style}} style='{{this.style}}'{{/if}} />"
+);
+Handlebars.registerHelper('isContentEditable', function(type, options) {
+    if(['span', 'h1', 'h2', 'h3', 'h4', 'h5', 'a', 'button'].includes(type)) {
+        return 'contenteditable="true"';
+    }
+});
+Handlebars.registerHelper('compare', function(lvalue, operator, rvalue, options) {
 
     var operators, result;
 

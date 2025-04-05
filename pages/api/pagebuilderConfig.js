@@ -23,7 +23,6 @@ export default function handler(req, res) {
         res.status(404).json({ message: 'File Not Found' });      
     }
 
-    res.status(200).json(data);
   }
 }
 

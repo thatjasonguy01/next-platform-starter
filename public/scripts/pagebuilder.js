@@ -38,7 +38,7 @@ window['viewport'] = "";
                     return response.json();
                 })
                 .then(data => {
-                //    renderCanvas(data);
+                    //    renderCanvas(data);
                 })
                 .catch(error => {
                     console.log(error);
@@ -70,7 +70,7 @@ window['viewport'] = "";
                 var interceptNavigation = function () {
                     $('a, button', canvas).on('click', function (e) {
                         e.preventDefault();
-                        if (plugin.settings.mode == 'view'){
+                        if (plugin.settings.mode == 'view') {
                             plugin.settings.page = $(this).attr('href').replace("https://www.mysite.com/", "");
                             loadCanvas()
                         }
@@ -82,17 +82,24 @@ window['viewport'] = "";
                 canvas.write(pageOutput);
                 canvas.close();
 
+                if (json.page.settings.mode == 'edit') {
+                    const link = canvas.createElement("link");
+                    link.rel = "stylesheet";
+                    link.type = "text/css";
+                    link.href = "/styles/admin.css";
+                    canvas.head.appendChild(link);
+                }
+
                 interceptNavigation();
 
                 if (plugin.settings.mode == 'edit') {
                     bindCanvas($('#canvas').contents().find('[data-editable]'));
                 }
-
             };
 
             getJSON();
         }
-    
+
         var bindCanvas = function ($elements) {
 
             $elements.not('[data-noedit]').off('mousedown').on('click dblclick', function (e) {
@@ -106,7 +113,7 @@ window['viewport'] = "";
             });
         }
 
-        var selectCanvasElement = function(target) {
+        var selectCanvasElement = function (target) {
             $('#pnlSettings').data('Forms').setTarget(target);
             plugin.settings.target = target;
             $('#canvas').trigger('setfocus', target);
@@ -121,17 +128,17 @@ window['viewport'] = "";
             plugin.settings.mode = 'edit';
 
             loadCanvas();
-            
+
             if (!$('#pnlComponents').data('Components')) {
-                $('#pnlComponents').Components({'config': 'settings.json'}).show();
+                $('#pnlComponents').Components({ 'config': 'settings.json' }).show();
             } else {
                 //$('#pnlComponents').show(); 
             }
 
             if (!$('#pnlSettings').data('Forms')) {
-                $('#pnlSettings').Forms({'config': 'settings.json'});//.show();
-           // } else {
-           //     $('#pnlSettings').show(); 
+                $('#pnlSettings').Forms({ 'config': 'settings.json' });//.show();
+                // } else {
+                //     $('#pnlSettings').show(); 
             }
 
             $('.admin').show();
@@ -154,15 +161,15 @@ window['viewport'] = "";
                 }
             }
 
-                $(el).addClass('active').siblings().removeClass('active');
-                $('#canvas').css({ 'width': $(el).data('width'), 'max-height': '100%', 'min-width': $(el).data('minwidth') });
-    
-                localStorage.setItem('resolution', $(el).data('value'));
-                localStorage.setItem('viewport', $(el).data('viewport'));
-    
-                window['viewport'] = $(el).data('viewport')
-                $('#canvas').trigger('viewportChange');
-            
+            $(el).addClass('active').siblings().removeClass('active');
+            $('#canvas').css({ 'width': $(el).data('width'), 'max-height': '100%', 'min-width': $(el).data('minwidth') });
+
+            localStorage.setItem('resolution', $(el).data('value'));
+            localStorage.setItem('viewport', $(el).data('viewport'));
+
+            window['viewport'] = $(el).data('viewport')
+            $('#canvas').trigger('viewportChange');
+
         }
 
         var bindData = function () {
@@ -172,9 +179,9 @@ window['viewport'] = "";
 
             var script = $('<script>', {
                 type: 'text/javascript',
-                src: 'https://kit.fontawesome.com/d664a6ba8a.js' // Replace with the actual path to your script file
-              });
-              $('head').append(script);
+                src: 'https://kit.fontawesome.com/d664a6ba8a.js'
+            });
+            $('head').append(script);
 
             $('#btnEdit').on('click', function () {
                 $(this).toggle().siblings().toggle();
@@ -186,11 +193,11 @@ window['viewport'] = "";
                 exitEditMode();
             })
 
-            $('#navPreviewSize > button').on('click', function(e) {
+            $('#navPreviewSize > a').on('click', function (e) {
                 setPreviewSize(this);
             });
 
-            $("nav > button").on('click', function() {
+            $("nav > .nav-link").on('click', function () {
                 $(this).addClass('active').siblings().removeClass('active');
                 $("nav").siblings($(this).data('target')).show().siblings().not('nav').hide();
             });
@@ -204,7 +211,7 @@ window['viewport'] = "";
 
         var positionContextMarker = function ($element) {
             try {
-                var $target =  $element ||  $('[data-selected]', canvas);
+                var $target = $element || $('[data-selected]', canvas);
                 var tokenMenu = $('#tokenMenu', canvas);
 
                 if (tokenMenu.length == 0) {
@@ -221,30 +228,30 @@ window['viewport'] = "";
                         }
                     });
                 }
-                
+
                 if ($target.length > 0) {
                     var contentWindow = $('#canvas')[0].contentWindow;
-                        $('#tokenMenu', canvas).data('target', $target).find('label').text($target.attr('data-name') || $target.attr('data-type'));
-                        $('#tokenMenu_Up', canvas).toggle($target.parents('[data-editable]').length > 0);
-                        //$('#tokenMenu_Add', $win).toggle($target.parents('[data-type="CONTENT"]').length > 0 && !$target.is('[no-action]'));
-                        //$('#tokenMenu_Delete', $win).toggle($target.parents('[data-type="CONTENT"]').length > 0);
-                        //$('#tokenMenu_Move', $win).toggle($target.parents('[data-type="CONTENT"]').length > 0);
+                    $('#tokenMenu', canvas).data('target', $target).find('label').text($target.attr('data-name') || $target.attr('data-type'));
+                    $('#tokenMenu_Up', canvas).toggle($target.parents('[data-editable]').length > 0);
+                    //$('#tokenMenu_Add', $win).toggle($target.parents('[data-type="CONTENT"]').length > 0 && !$target.is('[no-action]'));
+                    //$('#tokenMenu_Delete', $win).toggle($target.parents('[data-type="CONTENT"]').length > 0);
+                    //$('#tokenMenu_Move', $win).toggle($target.parents('[data-type="CONTENT"]').length > 0);
 
-                        //$('#tokenMenu_Add, #tokenMenu_Move, #tokenMenu_Delete',$contextMarker.parent()).toggle(!$(selected).is('[no-action]'));
-                        //$('.actionMenu', $win).hide(5, function () {
-                        //    $('#tokenMenu', $win).show();
-                        //});
-                        
-                        var rect = $target.get(0).getBoundingClientRect();
-                        var top = Math.max((rect.top + $(contentWindow).scrollTop() - 28), 0);
-                        var left = Math.max((rect.left + $(contentWindow).scrollLeft() - 4), 0) 
-                        var offscreenRight = 0 ; //left + $('#tokenMenu', canvas).width() > $.getWindow().width();
+                    //$('#tokenMenu_Add, #tokenMenu_Move, #tokenMenu_Delete',$contextMarker.parent()).toggle(!$(selected).is('[no-action]'));
+                    //$('.actionMenu', $win).hide(5, function () {
+                    //    $('#tokenMenu', $win).show();
+                    //});
 
-                        $('#tokenMenu', canvas).css({
-                            top: Math.max( (rect.top + $(contentWindow).scrollTop() - 26), 0) + "px",
-                            left: offscreenRight ? 'unset' : Math.max((rect.left + $(contentWindow).scrollLeft() - 4), 0) + "px",
-                            right: offscreenRight ? 0 : 'unset'
-                        })
+                    var rect = $target.get(0).getBoundingClientRect();
+                    var top = Math.max((rect.top + $(contentWindow).scrollTop() - 28), 0);
+                    var left = Math.max((rect.left + $(contentWindow).scrollLeft() - 4), 0)
+                    var offscreenRight = 0; //left + $('#tokenMenu', canvas).width() > $.getWindow().width();
+
+                    $('#tokenMenu', canvas).css({
+                        top: Math.max((rect.top + $(contentWindow).scrollTop() - 26), 0) + "px",
+                        left: offscreenRight ? 'unset' : Math.max((rect.left + $(contentWindow).scrollLeft() - 3), 0) + "px",
+                        right: offscreenRight ? 0 : 'unset'
+                    }).show();
                 } else {
                     $('#tokenMenu', canvas).hide();
                 }
@@ -254,7 +261,7 @@ window['viewport'] = "";
             }
         }
 
-        plugin.bindCanvas = function($elements) {
+        plugin.bindCanvas = function ($elements) {
             bindCanvas($elements);
         }
 
